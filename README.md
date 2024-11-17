@@ -14,3 +14,11 @@ Repository for Semester 2 Programming for Data Analytics assignments
 - https://numpy.org/doc/stable/reference/generated/numpy.sort.html
 - https://www.geeksforgeeks.org/plotting-multiple-bar-charts-using-matplotlib-in-python/
 - https://python-graph-gallery.com/125-small-multiples-for-line-chart/
+
+### Assignment 6-weather 
+
+- https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rolling.html
+- https://www.geeksforgeeks.org/python-pandas-dataframe-rolling/ 
+- https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#offset-aliases
+- https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dropna.html
+- https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.notna.html
