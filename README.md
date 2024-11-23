@@ -22,3 +22,6 @@ Repository for Semester 2 Programming for Data Analytics assignments
 - https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#offset-aliases
 - https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dropna.html
 - https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.notna.html
+- https://saturncloud.io/blog/how-to-read-csv-files-as-strings-in-pandas/#reading-csv-files-as-string-type > to avoid low memory warning given
+- https://www.geeksforgeeks.org/matplotlib-pyplot-margins-function-in-python/
+
