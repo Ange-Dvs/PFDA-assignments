@@ -14,6 +14,8 @@ Repository for Semester 2 Programming for Data Analytics assignments
 - https://numpy.org/doc/stable/reference/generated/numpy.sort.html
 - https://www.geeksforgeeks.org/plotting-multiple-bar-charts-using-matplotlib-in-python/
 - https://python-graph-gallery.com/125-small-multiples-for-line-chart/
+- https://www.programiz.com/python-programming/numpy/methods/tolist#:~:text=The%20tolist()%20method%20converts,changing%20its%20data%20or%20dimensions.
+- https://numpy.org/doc/2.1/reference/generated/numpy.ndarray.tolist.html
 
 ### Assignment 6-weather 
 
@@ -24,4 +26,5 @@ Repository for Semester 2 Programming for Data Analytics assignments
 - https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.notna.html
 - https://saturncloud.io/blog/how-to-read-csv-files-as-strings-in-pandas/#reading-csv-files-as-string-type > to avoid low memory warning given
 - https://www.geeksforgeeks.org/matplotlib-pyplot-margins-function-in-python/
+
 
