@@ -1,12 +1,31 @@
 # PFDA-assignments
-Repository for Semester 2 Programming for Data Analytics assignments
+This repository contains assignments for Semester 2 Programming for Data Analytics.
+
+## Walkthrough if the assignments
+
+This next section will walkthrough each assignment at a high level to discuss the methods and functions used. 
 
 ### Assignment 2-weather
-- https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html
-- https://saturncloud.io/blog/how-to-set-xaxis-intervals-ticks-for-graph-of-pandas-dataframe/#:~:text=One%20way%20to%20set%20x,the%20labels%20for%20the%20ticks.
-- https://www.geeksforgeeks.org/matplotlib-axis-axis-set_major_locator-function-in-python/
+Assignment 2 focuses on analysising and visualizing weather data using pandas and matplotlib.  
+A CSV file is used to source the data and specific columns are extracted to analysis.  
+The output is a plot showing the temperature recorded over time.  
+Key steps:   
+- Formatting:  
+Timestamps are converted to a datetime format using the ``parse_dates``[^1] parameter within ``pandas.read_csv()`` function.  
+- Filtering data:  
+Columns to be read in from the CSV file are specified using the ``usecols`` parameter within ``pandas.read_csv()`` function.  
+- Summary Statistics:  
+The minimum and maximum temperatures within the dataset.  
+- Visualisation:  
+Temperatures recorded are plotted to show the pattern of the temperature. The x-axis intervals are set using ``mdates.HourLocator()``[^] function with the ``set_major_locator()``[^] methodto set the ticks to 2 hour intervals.  
+The x-axis labels are then formatted using the ``set_major_formatter()``[^] method with the ``mdates.DateFormatter``[^] to structure the timestamp for the label in a way which is easier to read.  
+
 
 ### Assignment 3-domains
+Assignment 3 takes in a dataset in CSV format and plots a pie chart showing the distribution across the different domains.  
+- Data Processing:  
+Extracting the email domain information by splitting the email column using the ``split()``[^] method to split the string at a specified character in this case it is the @ symbol.  
+The   
 - https://www.w3schools.com/python/matplotlib_pie_charts.asp
 
 ### Assignment 5-risk
@@ -28,3 +47,24 @@ Repository for Semester 2 Programming for Data Analytics assignments
 - https://www.geeksforgeeks.org/matplotlib-pyplot-margins-function-in-python/
 
 
+***
+End 
+
+Author: 
+Angela Davis
+
+[^]: https://medium.com/@chanakapinfo/dealing-with-time-series-data-pandas-parse-dates-explained-5d7b28aa0f78  parse dates  
+[^]: https://www.geeksforgeeks.org/matplotlib-axis-axis-set_major_locator-function-in-python/ major locator functions  
+[^]: https://matplotlib.org/stable/api/dates_api.html#matplotlib.dates.HourLocator hourlocator  
+[^]: https://www.geeksforgeeks.org/matplotlib-axis-axis-set_major_formatter-function-in-python/ major formatter functions  
+[^]: https://matplotlib.org/stable/api/dates_api.html#matplotlib.dates.DateFormatter date formatter   
+[^]
+[^]
+[^]
+[^]
+[^]
+[^]
+[^]
+[^]
+[^]
+[^]
