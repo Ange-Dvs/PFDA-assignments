@@ -78,12 +78,72 @@ Within the first section of the notebook pie charts, line plots and stacked bar 
 
 ### Assignment 6-weather 
 
+This assignment involves analysis of weather data using ``Pandas`` Time Series [^], focusing on temperature and windspeed trends.  
+The dataset is resampled to different frequencies (daily and monthly)[^] to compute mean values, rolling averages, and maximum values. 
+
+The data is read in through the ``read_csv()`` function. ``low_memory=False``[^] is specified to aviod warnings working with the dataset due to inconsistent datatypes in the column and the very large amount of data.  The first 23 rows of the file are also skipped as  they are extra information which does not the CSV format. This is done using ``skiprows=23``.  
+
+>``df['date'] = pd.to_datetime(df['date'], format='%d-%b-%Y %H:%M',dayfirst=True)``
+
+The date column is converted to datetime using ``Pandas`` ``to_datetime()`` function[^].  
+
+>``df['wdsp'] = pd.to_numeric(df['wdsp'], errors='coerce')``
+
+The windspeed column is then converted to numeric using ``Pandas `` ``to_numeric`` function to handle any invalid data such as blank entries. ``errors='coerce'`` is used to parse andy invalid values to NaN. 
+
+>``df.set_index('date', inplace=True)``
+
+Then the date is set as the DataFrame index[^] to allow for easier filtering and performing operations on the dataset based on the dataset like resampling the data.
+
+Some plots of the temperature data are generated. The data is resampled [^] to a monthly frequence and the monthly mean is determined and displayed as a line plot.
+
+>``rs_mean_month = rs_mean_month[rs_mean_month['temp'].notna()]`` 
+
+The resampled monthly data is filtered to ensure there are no rows where with ``NaN`` in the temperature column [^]. 
+
+The focus then switches to the windspeed column.
+
+>``no_of_blanks_in_wdsp = df['wdsp'].isnull().sum()``
+
+First the column is checked to count the amount of blank entries in the dataset for the windspeed column, using ``Pandas`` ``isnull()``method combined with the ``sum()`` method. 
+
+>``df = df[df['wdsp'].notnull()]``
+
+The dataset is then filtered by dropping the rows that have blank values in the windspeed column. 
+
+The number of blank entries are then checked again and displayed for the user.
+The windspeed data is displayed using a line plot, resampled and various calculations are performed. 
+
+>``df['wdsp_rolling_24h'] = df['wdsp'].rolling(window='24h').mean()``
+
+The mean rolling windspeed for 24 hour window is determined using ``Pandas`` ``rolling()``[^] and ``mean()``.
+
+The windspeed data is resampled to a montly frequence and the mean calculated again. 
+The daily max windspeed is then determined by resampling the again to a daily frequency and picking the max of each day using ``max()`` method. 
+The daily max windspeed data is resampled again to monthly intervals to show the monthly mean of the daily max windspeed information. This is then plotted using a line plot. 
+
+
+Key steps:
+
+- Data Preparation: 
+The date column is converted to datetime and set as the DataFrame index. The dataset is cleaned and missing values are removed before plotting.
+
+- Analysis:
+
+  - Calculations done for the daily and monthly mean temperatures and 24-hour rolling averages to show visualise trends in the temperature data.
+  - Resampling data to calculated monthly averages of rolling windspeed and daily maximum windspeed trends.
+
+- Visualization:
+  - Line plots for temperature trends (daily and monthly).
+  - Rolling mean windspeed trends and monthly averages.
+  - Daily maximum windspeed and its monthly mean trends.
+
 - https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rolling.html
 - https://www.geeksforgeeks.org/python-pandas-dataframe-rolling/ 
-- https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#offset-aliases
-- https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dropna.html
-- https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.notna.html
-- https://saturncloud.io/blog/how-to-read-csv-files-as-strings-in-pandas/#reading-csv-files-as-string-type > to avoid low memory warning given
+- 
+- 
+- 
+- 
 - https://www.geeksforgeeks.org/matplotlib-pyplot-margins-function-in-python/
 
 
@@ -104,12 +164,12 @@ Angela Davis
 [^]: https://www.programiz.com/python-programming/numpy/methods/tolist#:~:text=The%20tolist()%20method%20converts,changing%20its%20data%20or%20dimensions. tolist
 [^]: https://matplotlib.org/stable/gallery/pie_and_polar_charts/pie_features.html pie chart explained
 [^]: https://matplotlib.org/stable/gallery/pie_and_polar_charts/pie_features.html pie chart
-[^]:
-[^]:
-[^]:
-[^]:
-[^]:
-[^]:
+[^]: https://pandas.pydata.org/docs/user_guide/timeseries.html time series
+[^]: https://medium.com/@abelkuriakose/data-resampling-using-python-78fbcef91e02
+[^]: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.set_index.html set_index
+[^]: https://saturncloud.io/blog/how-to-read-csv-files-as-strings-in-pandas/#reading-csv-files-as-string-type > to avoid low memory warning given
+[^]: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.notna.html - notna 
+[^]: https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#offset-aliases - setting used in resampling for selecting the interval
 [^]:
 [^]:
 [^]:
